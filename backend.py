@@ -3,6 +3,15 @@ from pydantic import BaseModel
 from ultralytics import YOLO  # Importing YOLOv8 class
 from io import BytesIO
 from PIL import Image
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Replace with specific domains in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI()
 
